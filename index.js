@@ -1,18 +1,24 @@
 #!/usr/bin/env node
-var fs = require('fs'),
-	connect = require('connect'),
-	serveIndex = require('serve-index'),
-	logger = require('morgan'),
-	WebSocket = require('faye-websocket'),
-	path = require('path'),
-	url = require('url'),
-	http = require('http'),
-	send = require('send'),
-	open = require('opn'),
-	es = require("event-stream"),
-	os = require('os'),
-	chokidar = require('chokidar');
-require('colors');
+import fs from 'fs'
+import connect from 'connect'
+import serveIndex from 'serve-index'
+import logger from 'morgan'
+import WebSocket from 'faye-websocket'
+import path,{ dirname } from 'path'
+import url,{ fileURLToPath } from 'url'
+import http from 'http'
+import send from 'send'
+import open from 'open'
+import es from 'event-stream'
+import os from 'os'
+import chokidar from 'chokidar'
+import colors from 'colors'
+
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 var INJECTED_CODE = fs.readFileSync(path.join(__dirname, "injected.html"), "utf8");
 
@@ -396,4 +402,4 @@ LiveServer.shutdown = function() {
 		server.close();
 };
 
-module.exports = LiveServer;
+export default LiveServer

@@ -12,41 +12,36 @@
   ],
   "author": "Tapio Vierros",
   "dependencies": {
-    "chokidar": "^2.0.4",
+    "chokidar": "3.6.0",
     "colors": "1.4.0",
-    "connect": "^3.6.6",
+    "connect": "^3.7.0",
     "cors": "latest",
-    "event-stream": "3.3.4",
-    "faye-websocket": "0.11.x",
-    "http-auth": "3.1.x",
-    "morgan": "^1.9.1",
+    "event-stream": "^4.0.1",
+    "faye-websocket": "^0.11.4",
+    "http-auth": "^4.2.0",
+    "morgan": "^1.10.0",
     "object-assign": "latest",
-    "opn": "latest",
+    "open": "latest",
     "proxy-middleware": "latest",
     "send": "latest",
     "serve-index": "^1.9.1"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "jshint": "^2.9.6",
-    "mocha": "^5.2.0",
-    "supertest": "^3.3.0"
+    "eslint": "^9.7.0",
+    "supertest": "^7.0.0"
   },
   "scripts": {
-    "lint": "eslint live-server.js index.js",
-    "hint": "jshint live-server.js index.js",
-    "test": "mocha test --exit && npm run lint"
+    "lint": "eslint live-server.js index.js"
   },
   "bin": {
     "live-server": "./live-server.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/tapio/live-server.git"
   },
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "node": ">=18",
   "preferGlobal": true,
   "license": "MIT",
   "eslintConfig": {

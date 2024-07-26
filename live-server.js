@@ -1,8 +1,11 @@
 #!/usr/bin/env node
-var path = require('path');
-var fs = require('fs');
-var assign = require('object-assign');
-var liveServer = require("./index");
+import path from 'path';
+import fs from 'fs';
+import assign from 'object-assign';
+import liveServer from "./index.js";
+
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
 
 var opts = {
 	host: process.env.IP,
